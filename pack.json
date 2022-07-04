@@ -1,0 +1,7 @@
+{
+	"name": "PickleHUD",
+	"description": "Re-arranges and adds new HUD elements for the (objectively) best experience.\n\nAllows for a custom profile with an icon and a custom border too! Check the script for details.",
+	"restart":false,
+	"runsGlobally": true,
+	"color": [0, 102, 0]
+}
