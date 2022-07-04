@@ -58,14 +58,19 @@ local ratingTextY = textY - 90;
 local versionTextY = iconY - 20;
 local thingy = "Sick: 0\nGood: 0\nBad:  0\nShit: 0";
 local version = '1.0.0';
+local botplayY = versionTextY - 20;
+local songNameY = 0;
 
 function onCreatePost()
+	songNameY = getProperty('healthBar.y') - 30;
 	if downscroll == true then
 		iconY = 10;
 		textY = 20;
 		scoreTextY = 43;
 		ratingTextY = textY + 40;
 		versionTextY = 164;
+		botplayY = versionTextY + 20;
+		songNameY = getProperty('healthBar.y') + 20;
 	end
 
 	-- lane underlay feature
@@ -158,7 +163,7 @@ function onCreatePost()
 	setProperty('scoreTxt.y', scoreTextY);
 
 	-- botplay text
-	makeLuaText('botplay', "BOTPLAY", 0, 10, versionTextY - 20);
+	makeLuaText('botplay', "BOTPLAY", 0, 10, botplayY);
 	setTextSize('botplay', 16);
 	setTextBorder('botplay', 2, '000000');
 	setTextColor('botplay', 'FF0000')
@@ -177,7 +182,7 @@ function onCreatePost()
 	else
 		diffName = 'HARD';
 	end
-	makeLuaText('songNameLol', songName .. " - " .. diffName, 0, getProperty('healthBar.x') - 2, getProperty('healthBar.y') - 30);
+	makeLuaText('songNameLol', songName .. " - " .. diffName, 0, getProperty('healthBar.x') - 2, songNameY);
 	setTextSize('songNameLol', 24);
 	setTextBorder('songNameLol', 2, '000000');
 	setTextFont('songName', 'vcr.ttf');
